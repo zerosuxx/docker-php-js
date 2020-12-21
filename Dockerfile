@@ -11,7 +11,7 @@ RUN git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
 RUN apt-get install -y python2 libtinfo5
 
-RUN ln -s /usr/bin/python2 /usr/bin/python
+RUN ln -s /usr/bin/python2 /usr/bin/python \
     && export PATH=/depot_tools:"$PATH" \
     && gclient \
     && fetch v8 \
